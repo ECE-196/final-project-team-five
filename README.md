@@ -1,10 +1,8 @@
 # Final Project
 
-This is where you and your team will place design documents, notes, research, etc.
+[Website](https://eceunilock.wordpress.com)
 
-We want to see your individual contributions and progress over time, so make sure each of
-you contribute substantially. We will look at the commit history to see your contributions.
 
-# Submission
+[Poster](https://docs.google.com/presentation/d/16C1Z2XDyntSw6JHbOTtGmIsTxYupsFhoAjeBmQPg56s/edit?usp=sharing)
 
-1. All your work!
+[Lock_V1](https://drive.google.com/file/d/1l9DyjJKeOXGftBQB_VL0KF6kT_iQgPzs/view?usp=sharing)
