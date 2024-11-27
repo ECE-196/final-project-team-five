@@ -19,6 +19,7 @@ LockHub::LockHub(int straightArmPin, int jaggedArmPin) {
 void LockHub::setCloseAngles(int straight, int jagged) {
     straightCloseAngle = straight;
     jaggedCloseAngle = jagged;
+    closeAngleSet = true;
 }
 
 /**
@@ -29,12 +30,16 @@ void LockHub::setCloseAngles(int straight, int jagged) {
 void LockHub::setOpenAngles(int straight, int jagged) {
     straightOpenAngle = straight;
     jaggedOpenAngle = jagged;
+    openAngleSet = true;
 }
 
 /**
  * @brief Restart the lock mechanism.
  */
 void LockHub::lockRestart() {
+    if (!openAngleSet && !closeAngleSet) {
+        throw "Open and close angles not set";
+    }
     lockOff();
 }
 
@@ -43,6 +48,9 @@ void LockHub::lockRestart() {
  * @param card Array containing the key card data.
  */
 void LockHub::lockOn() {
+    if (!openAngleSet && !closeAngleSet) {
+        throw "Open and close angles not set";
+    }
     lockRestart();
     straightArm.write(straightCloseAngle);
     delay(1000);
@@ -55,6 +63,9 @@ void LockHub::lockOn() {
  * @param card Array containing the key card data.
  */
 void LockHub::lockOff() {
+    if (!openAngleSet && !closeAngleSet) {
+        throw "Open and close angles not set";
+    }
     straightArm.write(straightOpenAngle);
     delay(1000);
     jaggedArm.write(jaggedOpenAngle);

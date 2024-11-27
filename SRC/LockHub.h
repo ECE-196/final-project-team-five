@@ -13,6 +13,8 @@ class LockHub {
         unsigned char keyCard[5]; ///< Array to store the key card data
         int straightOpenAngle; ///< Angle for straight arm in closed position
         int straightCloseAngle; ///< Angle for straight arm in open position
+        bool openAngleSet; ///< Flag to indicate if the open angles are set
+        bool closeAngleSet; ///< Flag to indicate if the close angles are set
         int jaggedCloseAngle; ///< Angle for jagged arm in closed position
         int jaggedOpenAngle; ///< Angle for jagged arm in open position
         bool isLocked; ///< Flag to indicate if the lock is engaged
