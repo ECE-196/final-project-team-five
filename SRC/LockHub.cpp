@@ -35,34 +35,30 @@ void LockHub::setOpenAngles(int straight, int jagged) {
  * @brief Restart the lock mechanism.
  */
 void LockHub::lockRestart() {
-    straightArm.write(straightOpenAngle);
-    delay(1000);
-    jaggedArm.write(jaggedOpenAngle);
-    isLocked = false;
+    lockOff();
 }
 
 /**
  * @brief Engage the lock using the provided key card.
  * @param card Array containing the key card data.
  */
-void LockHub::lockOn(unsigned char card[5]) {
-    if (isKey(card)) {
-        lockRestart();
-        straightArm.write(straightCloseAngle);
-        delay(1000);
-        jaggedArm.write(straightCloseAngle);
-        isLocked = true;
-    }
+void LockHub::lockOn() {
+    lockRestart();
+    straightArm.write(straightCloseAngle);
+    delay(1000);
+    jaggedArm.write(straightCloseAngle);
+    isLocked = true;
 }
 
 /**
  * @brief Disengage the lock using the provided key card.
  * @param card Array containing the key card data.
  */
-void LockHub::lockOff(unsigned char card[5]) {
-    if (isKey(card)) {
-        lockRestart();
-    }
+void LockHub::lockOff() {
+    straightArm.write(straightOpenAngle);
+    delay(1000);
+    jaggedArm.write(jaggedOpenAngle);
+    isLocked = false;
 }
 
 /**

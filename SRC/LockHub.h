@@ -48,15 +48,13 @@ class LockHub {
 
         /**
          * @brief Engage the lock using the provided key card.
-         * @param card Array containing the key card data.
          */
-        void lockOn(unsigned char card[5]);
+        void lockOn();
 
         /**
          * @brief Disengage the lock using the provided key card.
-         * @param card Array containing the key card data.
          */
-        void lockOff(unsigned char card[5]);
+        void lockOff();
 
         /**
          * @brief Check if the lock is currently engaged.
